@@ -28,3 +28,10 @@ def list(request):
         btmlist.append(row)
         
     return render(request, 'list.html', {'btmlist': btmlist})
+
+def found_tags(request):
+    found_taglist = None
+    with open('/data/btm_found_tags') as f:
+        found_taglist = f.readlines()
+    print found_taglist
+    return render(request, 'found_tags.html', {'found_taglist': found_taglist})

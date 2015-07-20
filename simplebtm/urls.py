@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'ipm.views.home', name='home'),
     url(r'^list/$', 'ipm.views.list', name='list'),
+    url(r'^found_tags/$', 'ipm.views.found_tags', name='found_tags'),
 )

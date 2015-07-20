@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class bus_tags(models.Model):
+    bus_tag_0  = models.CharField(max_length=100, default='')
     bus_tag_1  = models.CharField(max_length=100, default='')
     bus_tag_2  = models.CharField(max_length=100, default='')
     bus_tag_3  = models.CharField(max_length=100, default='')
