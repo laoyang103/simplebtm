@@ -24,7 +24,7 @@ def list(request):
             if 3 == i: row['server_ip'] = r[i]
             if 4 == i: row['client_ip'] = r[i]
             if 5 == i: row['delay'] = r[i]
-            if i > 5: row['bus_tag_' + str(i - 5)] = r[i]
+            if i > 5: row['bus_tag_' + str(i - 6)] = r[i]
         btmlist.append(row)
         
     return render(request, 'list.html', {'btmlist': btmlist})
