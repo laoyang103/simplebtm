@@ -2,12 +2,19 @@
 
 {% block content %}                                                                                                                                  
 
-<table class="table table-bordered table-hover">
-    <tbody>
-        {% for found_tag in found_taglist %}
-            <tr>{{ found_tag }}</tr>
-        {% endfor %}
-    </tbody>
-</table>
+{% for key, value in found_taglist.items %} 
+    <h1>{{ key }}</h1>
+    <table class="table table-bordered table-hover">
+        <tbody>
+            {% for found_tags in value %}
+                <tr>
+                    {% for tag in found_tags %}
+                        <td>{{ tag }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endfor %}
 
 {% endblock %}

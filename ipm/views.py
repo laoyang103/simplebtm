@@ -30,8 +30,14 @@ def list(request):
     return render(request, 'list.html', {'btmlist': btmlist})
 
 def found_tags(request):
-    found_taglist = None
+    found_taglist = {}
     with open('/data/btm_found_tags') as f:
-        found_taglist = f.readlines()
-    print found_taglist
+        for line in f.readlines():
+            if line.startswith('#'): 
+                found_taglist[line] = []
+                found_taglist['curr'] = line
+                continue
+            csvlist = line.strip('\n').split(',')
+            found_taglist[found_taglist['curr']].append(csvlist)
+    found_taglist.pop('curr')
     return render(request, 'found_tags.html', {'found_taglist': found_taglist})
