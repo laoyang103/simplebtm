@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}                                                                                                                                  
+<form action='/search' method="GET">
+    分组: <input type="text" name="group" />
+    <input type="submit" value="search" />
+</form>
 <table class="table table-bordered table-hover">
     <tbody>
         <tr>
@@ -9,6 +13,7 @@
             <th>server_ip </th>
             <th>client_ip </th>
             <th>delay </th>
+            <th>group</th>
             <th>bus_tag_0 </th>
             <th>bus_tag_1 </th>
             <th>bus_tag_2 </th>
@@ -37,6 +42,7 @@
                 <td>{{ btm.server_ip }}</td>
                 <td>{{ btm.client_ip }}</td>
                 <td>{{ btm.delay }}</td>
+                <td>{{ btm.group }}</td>
                 <td>{{ btm.bus_tag_0  }}</td>
                 <td>{{ btm.bus_tag_1  }}</td>
                 <td>{{ btm.bus_tag_2  }}</td>

@@ -23,3 +23,6 @@ class bus_tags(models.Model):
     bus_tag_17 = models.CharField(max_length=100, blank=True, default='')
     bus_tag_18 = models.CharField(max_length=100, blank=True, default='')
     bus_tag_19 = models.CharField(max_length=100, blank=True, default='')
+
+    def __str__(self):
+        return str(self.group) + '----' + self.bus_tag_0
