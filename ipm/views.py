@@ -58,7 +58,7 @@ def search(request):
 def found_tags(request):
     found_taglist = {}
     try: 
-        with open('/data/btm_found_tags') as f:
+        with open('/tmp/btm_found_tags') as f:
             for line in f.readlines():
                 if line.startswith('#'): 
                     found_taglist[line] = []
